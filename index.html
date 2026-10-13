@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MOVEZA | Modern Fashion</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         INTRO VIDEO
+    ========================================= -->
+
+    <div id="intro-screen">
+
+        <video id="intro-video" playsinline>
+            <source src="video/moveza-intro.mp4" type="video/mp4">
+            お使いのブラウザでは動画を再生できません。
+        </video>
+
+
+        <!-- ENTER -->
+
+        <div id="intro-start">
+
+            <h1>MOVEZA</h1>
+
+            <p>MODERN TRENDS</p>
+
+            <button id="enter-button">
+                ENTER
+            </button>
+
+        </div>
+
+
+        <!-- SKIP -->
+
+        <button id="skip-intro">
+            Skip Intro
+        </button>
+
+    </div>
+
+
+
+
+    <!-- ========================================
+         MAIN WEBSITE
+    ========================================= -->
+
+    <div id="main-site">
+
+
+        <!-- ====================================
+             HEADER
+        ===================================== -->
+
+        <header class="site-header">
+
+            <div class="logo">
+                MOVEZA
+            </div>
+
+
+            <nav class="main-nav">
+
+                <a href="#home">
+                    HOME
+                </a>
+
+                <a href="#shop">
+                    SHOP
+                </a>
+
+                <a href="#style">
+                    STYLE
+                </a>
+
+                <a href="#ai-advisor">
+                    AI STYLE
+                </a>
+
+                <a href="#tryon">
+                    TRY ON
+                </a>
+
+            </nav>
+
+
+            <div class="header-icons">
+
+                <button id="search-button">
+                    🔍
+                </button>
+
+                <button id="cart-button">
+                    🛒
+                </button>
+
+            </div>
+
+        </header>
+
+        !-- ====================================
+     CART PANEL
+===================================== -->
+
+<div id="cart-panel" class="cart-panel">
+
+    <div class="cart-header">
+        <h2>YOUR CART</h2>
+
+        <button id="close-cart">
+            ×
+        </button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+        <p class="empty-cart">
+            Your cart is empty.
+        </p>
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+            <span>TOTAL</span>
+            <strong id="cart-total">¥0</strong>
+        </div>
+
+        <button id="checkout-button">
+            CHECKOUT
+        </button>
+
+    </div>
+
+</div>
+
+<div id="cart-overlay" class="cart-overlay"></div>
+
+
+
+
+        <!-- ====================================
+             HERO
+        ===================================== -->
+
+        <main>
+
+
+            <section id="home" class="hero-section">
+
+
+                <div class="hero-content">
+
+                    <p class="hero-small">
+                        NEW COLLECTION 2026
+                    </p>
+
+
+                    <h1>
+                        MODERN<br>
+                        TRENDS
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Discover your style.<br>
+                        Dress for your moment.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#shop" class="primary-button">
+                            SHOP NOW
+                        </a>
+
+                        <a href="#ai-advisor" class="secondary-button">
+                            AI STYLE
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <!--
+                    後でここに fashion model image
+                    を入れることができます。
+                    -->
+
+                    <div class="hero-image-placeholder">
+
+                        <span>MOVEZA</span>
+
+                        <p>
+                            YOUR STYLE<br>
+                            YOUR MOMENT
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="scroll-text">
+                    SCROLL ↓
+                </div>
+
+
+            </section>
+
+
+
+
+            <!-- ====================================
+                 TODAY'S STYLE
+            ===================================== -->
+
+            <section class="weather-section">
+
+
+                <div class="section-label">
+                    TODAY'S STYLE
+                </div>
+
+
+                <div class="weather-content">
+
+
+                    <div class="weather-info">
+
+                        <p class="location">
+                            KANAZAWA
+                        </p>
+
+
+                        <div class="temperature">
+                            --°C
+                        </div>
+
+
+                        <p class="weather-status">
+                            Weather information
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="weather-recommendation">
+
+                        <p class="recommendation-label">
+                            RECOMMENDED FOR YOU
+                        </p>
+
+
+                        <h2>
+                            Dress for<br>
+                            today's weather.
+                        </h2>
+
+
+                        <p>
+                            MOVEZA will recommend
+                            suitable fashion items
+                            based on the current weather.
+                        </p>
+
+
+                        <a href="#shop" class="text-link">
+                            VIEW COLLECTION →
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+            <!-- ====================================
+                 FIND YOUR STYLE
+            ===================================== -->
+
+            <section id="style" class="style-section">
+
+
+                <div class="section-heading">
+
+                    <p>
+                        DISCOVER
+                    </p>
+
+                    <h2>
+                        FIND YOUR STYLE
+                    </h2>
+
+                </div>
+
+
+
+                <div class="style-grid">
+
+
+                    <!-- STREET -->
+
+                    <a href="#shop" class="style-card">
+
+                        <div class="style-card-image street-style">
+
+                            <span>
+                                STREET
+                            </span>
+
+                        </div>
+
+
+                        <div class="style-card-info">
+
+                            <h3>
+                                STREET
+                            </h3>
+
+                            <span>
+                                EXPLORE →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- CASUAL -->
+
+                    <a href="#shop" class="style-card">
+
+                        <div class="style-card-image casual-style">
+
+                            <span>
+                                CASUAL
+                            </span>
+
+                        </div>
+
+
+                        <div class="style-card-info">
+
+                            <h3>
+                                CASUAL
+                            </h3>
+
+                            <span>
+                                EXPLORE →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- ELEGANT -->
+
+                    <a href="#shop" class="style-card">
+
+                        <div class="style-card-image elegant-style">
+
+                            <span>
+                                ELEGANT
+                            </span>
+
+                        </div>
+
+
+                        <div class="style-card-info">
+
+                            <h3>
+                                ELEGANT
+                            </h3>
+
+                            <span>
+                                EXPLORE →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+            <!-- ====================================
+                 NEW ARRIVALS
+            ===================================== -->
+
+            <section id="shop" class="products-section">
+
+
+                <div class="products-heading">
+
+                    <div>
+
+                        <p>
+                            JUST IN
+                        </p>
+
+                        <h2>
+                            NEW ARRIVALS
+                        </h2>
+
+                    </div>
+
+
+                    <a href="#" class="text-link">
+                        VIEW ALL →
+                    </a>
+
+                </div>
+                <!-- PRODUCT SEARCH & FILTER -->
+
+<div class="shop-tools">
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="product-search"
+            placeholder="Search products..."
+        >
+
+        <button id="clear-search">
+            ×
+        </button>
+    </div>
+
+
+    <div class="filter-buttons">
+
+        <button
+            class="filter-button active"
+            data-filter="all">
+            ALL
+        </button>
+
+        <button
+            class="filter-button"
+            data-filter="shirt">
+            SHIRTS
+        </button>
+
+        <button
+            class="filter-button"
+            data-filter="jacket">
+            JACKETS
+        </button>
+
+    </div>
+
+</div>
+
+
+
+                <div class="products-grid">
+
+
+                    <!-- PRODUCT 1 -->
+
+                    <article class="product-card"
+                    data-category="shirt>
+
+                        <div class="product-image">
+
+                            <img
+                                src="images/shirt1.png"
+                                alt="White Shirt"
+                            >
+
+                            <span class="product-tag">
+                                NEW
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <h3>
+                                White Shirt
+                            </h3>
+
+                            <p>
+                                ¥5,900
+                            </p>
+
+                            <button
+                                class="add-cart-button"
+                                data-product="White Shirt"
+                            >
+                                ADD TO CART
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PRODUCT 2 -->
+
+                    <article class="product-card" data-category="shirt">
+
+                        <div class="product-image">
+
+                            <img
+                                src="images/shirt2.png"
+                                alt="Orange Shirt"
+                            >
+
+                            <span class="product-tag">
+                                NEW
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <h3>
+                                Orange Shirt
+                            </h3>
+
+                            <p>
+                                ¥6,900
+                            </p>
+
+                            <button
+                                class="add-cart-button"
+                                data-product="Orange Shirt"
+                            >
+                                ADD TO CART
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PRODUCT 3 -->
+
+                    <article class="product-card"
+                    data-category="shirt">
+
+                        <div class="product-image">
+
+                            <img
+                                src="images/shirt3.png"
+                                alt="Blue Shirt"
+                            >
+
+                            <span class="product-tag">
+                                NEW
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <h3>
+                                Blue Shirt
+                            </h3>
+
+                            <p>
+                                ¥6,900
+                            </p>
+
+                            <button
+                                class="add-cart-button"
+                                data-product="Blue Shirt"
+                            >
+                                ADD TO CART
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PRODUCT 4 -->
+
+                    <article class="product-card"
+                    data-category="jacket">
+
+                        <div class="product-image product-placeholder">
+
+                            <span>
+                                MOVEZA
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <h3>
+                                Essential Jacket
+                            </h3>
+
+                            <p>
+                                ¥8,900
+                            </p>
+
+                            <button
+                                class="add-cart-button"
+                                data-product="Essential Jacket"
+                            >
+                                ADD TO CART
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+            <!-- ====================================
+                 AI STYLE ADVISOR
+            ===================================== -->
+
+            <section id="ai-advisor" class="ai-section">
+
+
+                <div class="ai-background-text">
+                    AI
+                </div>
+
+
+                <div class="ai-content">
+
+
+                    <p class="section-label">
+                        SMART FASHION
+                    </p>
+
+
+                    <h2>
+                        YOUR STYLE.<br>
+                        <span>REIMAGINED.</span>
+                    </h2>
+
+
+                    <p class="ai-description">
+                        Let AI discover a style
+                        that fits you.
+                        Get personalized fashion
+                        recommendations from MOVEZA.
+                    </p>
+
+
+                    <button id="ai-suggest" class="ai-button">
+                        TRY AI STYLE
+                    </button>
+
+
+                    <p id="ai-result">
+                        AIのおすすめがここに表示されます...
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+            <!-- ====================================
+                 VIRTUAL TRY ON
+            ===================================== -->
+
+            <section id="tryon" class="tryon-section">
+
+
+                <div class="tryon-heading">
+
+                    <p>
+                        VIRTUAL EXPERIENCE
+                    </p>
+
+                    <h2>
+                        TRY BEFORE<br>
+                        YOU BUY
+                    </h2>
+
+                </div>
+
+
+
+                <div class="tryon-content">
+
+
+                    <!-- LEFT -->
+
+                    <div class="tryon-description">
+
+                        <p>
+                            Upload your photo
+                            and discover how
+                            MOVEZA styles look on you.
+                        </p>
+
+
+                        <label
+                            for="user-image"
+                            class="upload-button"
+                        >
+                            UPLOAD YOUR PHOTO
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="user-image"
+                            accept="image/*"
+                        >
+
+
+                        <div class="controls">
+
+                            <select id="clothes-select">
+
+                                <option value="shirt1.png">
+                                    White Shirt
+                                </option>
+
+                                <option value="shirt2.png">
+                                    Orange Shirt
+                                </option>
+
+                                <option value="shirt3.png">
+                                    Blue Shirt
+                                </option>
+
+                            </select>
+
+
+                            <button id="try-button">
+                                TRY ON
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="adjust-controls">
+
+                            <button id="move-up">
+                                ↑
+                            </button>
+
+                            <button id="move-down">
+                                ↓
+                            </button>
+
+                            <button id="move-left">
+                                ←
+                            </button>
+
+                            <button id="move-right">
+                                →
+                            </button>
+
+                            <button id="scale-up">
+                                ＋
+                            </button>
+
+                            <button id="scale-down">
+                                −
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- RIGHT / CANVAS -->
+
+                    <div
+                        id="canvas-container"
+                        class="tryon-canvas"
+                    >
+
+                        <canvas
+                            id="tryon-canvas"
+                            width="400"
+                            height="500"
+                        >
+                        </canvas>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+            <!-- ====================================
+                 BRAND MESSAGE
+            ===================================== -->
+
+            <section class="brand-section">
+
+
+                <div class="brand-content">
+
+                    <p>
+                        MOVEZA
+                    </p>
+
+
+                    <h2>
+                        MODERN TRENDS<br>
+                        IN ONE PLACE
+                    </h2>
+
+
+                    <span>
+                        ONE BUTTON DELIVERY
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+
+        <!-- ====================================
+             FOOTER
+        ===================================== -->
+
+        <footer class="site-footer">
+
+
+            <div class="footer-logo">
+                MOVEZA
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    HOME
+                </a>
+
+                <a href="#shop">
+                    SHOP
+                </a>
+
+                <a href="#style">
+                    STYLE
+                </a>
+
+                <a href="#ai-advisor">
+                    AI STYLE
+                </a>
+
+                <a href="#tryon">
+                    TRY ON
+                </a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 MOVEZA | Created by Jaagii
+            </p>
+
+
+        </footer>
+
+
+    </div>
+
+
+
+
+    <!-- ========================================
+         SCRIPT
+    ========================================= -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
