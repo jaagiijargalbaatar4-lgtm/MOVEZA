@@ -317,7 +317,7 @@ aiButton.addEventListener("click", async () => {
 
     try {
       // Gemini API Key
-      const API_KEY = "(秘密)";
+      const API_KEY = ".....";
 
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${API_KEY}`,
@@ -1018,3 +1018,224 @@ function showNoProductsMessage(show) {
     }
 
 }
+/* ========================================
+   MOVEZA - WEATHER API + TODAY'S STYLE
+======================================== */
+
+async function loadMovezaWeather() {
+    const temperatureElement =
+        document.querySelector(".temperature");
+
+    const statusElement =
+        document.querySelector(".weather-status");
+
+    const feelsLikeElement =
+        document.getElementById("feels-like");
+
+    const humidityElement =
+        document.getElementById("humidity");
+
+    const windElement =
+        document.getElementById("wind-speed");
+
+    const messageElement =
+        document.getElementById("weather-message");
+
+    const recommendation =
+        document.querySelector(".weather-recommendation");
+
+    try {
+        const url =
+            "https://api.open-meteo.com/v1/forecast" +
+            "?latitude=36.5613" +
+            "&longitude=136.6562" +
+            "&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m" +
+            "&timezone=Asia%2FTokyo";
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Weather API request failed");
+        }
+
+        const data = await response.json();
+        const weather = data.current;
+
+        const temperature = weather.temperature_2m;
+        const feelsLike = weather.apparent_temperature;
+        const humidity = weather.relative_humidity_2m;
+        const wind = weather.wind_speed_10m;
+        const rain = weather.precipitation;
+        const code = weather.weather_code;
+
+        // Display current weather
+        temperatureElement.textContent =
+            `${Math.round(temperature)}°C`;
+
+        feelsLikeElement.textContent =
+            `${Math.round(feelsLike)}°C`;
+
+        humidityElement.textContent = `${humidity}%`;
+        windElement.textContent = `${wind} km/h`;
+
+        // Weather description
+        let weatherText = "Partly cloudy";
+
+        if (code === 0) {
+            weatherText = "Clear sky";
+        } else if (code <= 3) {
+            weatherText = "Cloudy";
+        } else if (code >= 45 && code <= 48) {
+            weatherText = "Foggy";
+        } else if (code >= 51 && code <= 67) {
+            weatherText = "Rainy";
+        } else if (code >= 71 && code <= 77) {
+            weatherText = "Snowy";
+        } else if (code >= 80 && code <= 82) {
+            weatherText = "Rain showers";
+        } else if (code >= 85 && code <= 86) {
+            weatherText = "Snow showers";
+        } else if (code >= 95) {
+            weatherText = "Thunderstorm";
+        }
+
+        statusElement.textContent = weatherText;
+
+        // Today's Style recommendation
+        let title = "Dress for today's weather.";
+        let description =
+            "Explore a style that fits today's weather.";
+
+        if (rain > 0 || (code >= 51 && code <= 82)) {
+            title = "Ready for the rain.";
+            description =
+                "Try a water-resistant jacket and bring an umbrella.";
+        } else if (temperature < 10) {
+            title = "Stay warm. Look sharp.";
+            description =
+                "Layer up with a warm jacket and outerwear.";
+        } else if (temperature < 20) {
+            title = "Layer up in style.";
+            description =
+                "A light jacket is perfect for cooler weather.";
+        } else {
+            title = "Keep it light.";
+            description =
+                "Explore T-shirts and lightweight streetwear.";
+        }
+
+        recommendation.querySelector("h2").textContent = title;
+
+        recommendation.querySelectorAll("p")[1].textContent =
+            description;
+             // Recommend existing MOVEZA products by weather
+        const weatherProducts =
+            document.getElementById("weather-products");
+
+        let products = [];
+
+        if (rain > 0 || (code >= 51 && code <= 82)) {
+            products = [
+                {
+                    name: "Essential Jacket",
+                    price: "¥8,900",
+                    category: "Rainy-day layering",
+                    image: null
+                },
+                {
+                    name: "White Shirt",
+                    price: "¥5,900",
+                    category: "Layering essential",
+                    image: "images/shirt1.png"
+                }
+            ];
+        } else if (temperature < 10) {
+            products = [
+                {
+                    name: "Essential Jacket",
+                    price: "¥8,900",
+                    category: "Cold-weather layering",
+                    image: null
+                },
+                {
+                    name: "Blue Shirt",
+                    price: "¥6,900",
+                    category: "Layering essential",
+                    image: "images/shirt3.png"
+                }
+            ];
+        } else if (temperature < 20) {
+            products = [
+                {
+                    name: "Essential Jacket",
+                    price: "¥8,900",
+                    category: "Autumn layering",
+                    image: null
+                },
+                {
+                    name: "White Shirt",
+                    price: "¥5,900",
+                    category: "Everyday streetwear",
+                    image: "images/shirt1.png"
+                }
+            ];
+        } else {
+            products = [
+                {
+                    name: "White Shirt",
+                    price: "¥5,900",
+                    category: "Lightweight essential",
+                    image: "images/shirt1.png"
+                },
+                {
+                    name: "Blue Shirt",
+                    price: "¥6,900",
+                    category: "Everyday streetwear",
+                    image: "images/shirt3.png"
+                }
+            ];
+        }
+
+        weatherProducts.innerHTML = products.map(product => `
+            <a href="#shop" class="weather-product-card">
+
+                ${
+                    product.image
+                    ? `<img src="${product.image}"
+                            alt="${product.name}">`
+                    : `<div class="weather-product-placeholder">
+                            MOVEZA
+                       </div>`
+                }
+
+                <span class="weather-product-category">
+                    ${product.category}
+                </span>
+
+                <h3>${product.name}</h3>
+
+                <p>${product.price}</p>
+
+                <span class="weather-product-link">
+                    VIEW ITEM →
+                </span>
+
+            </a>
+        `).join("");
+
+        messageElement.textContent =
+            "Style recommendations updated for today's weather.";
+
+    } catch (error) {
+        console.error("MOVEZA Weather Error:", error);
+
+        statusElement.textContent =
+            "Weather unavailable";
+
+        messageElement.textContent =
+            "Unable to load weather. Please try again later.";
+    }
+}
+
+// Load weather when the page opens
+loadMovezaWeather();

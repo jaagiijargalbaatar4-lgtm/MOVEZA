@@ -21,7 +21,7 @@
     <div id="intro-screen">
 
         <video id="intro-video" playsinline>
-            <source src="video/moveza-intro.mp4" type="video/mp4">
+            <source src="video/Moveza-Intro(1).mp4" type="video/mp4">
             お使いのブラウザでは動画を再生できません。
         </video>
 
@@ -254,6 +254,15 @@
                         <p class="weather-status">
                             Weather information
                         </p>
+                        <div class="weather-details">
+    <p>Feels like: <span id="feels-like">--°C</span></p>
+    <p>Humidity: <span id="humidity">--%</span></p>
+    <p>Wind: <span id="wind-speed">-- km/h</span></p>
+</div>
+
+<p id="weather-message" class="weather-message">
+    Checking today's weather...
+</p>
 
                     </div>
 
@@ -261,29 +270,29 @@
 
                     <div class="weather-recommendation">
 
-                        <p class="recommendation-label">
-                            RECOMMENDED FOR YOU
-                        </p>
+    <p class="recommendation-label">
+        2026 WEATHER EDIT
+    </p>
 
+    <h2>
+        Dress for today's weather.
+    </h2>
 
-                        <h2>
-                            Dress for<br>
-                            today's weather.
-                        </h2>
+    <p>
+        Discover fashion picks selected for today's weather
+        and the latest seasonal trends.
+    </p>
 
+    <!-- WEATHER-BASED PRODUCT RECOMMENDATIONS -->
+    <div id="weather-products" class="weather-products">
+        <p>Loading recommended items...</p>
+    </div>
 
-                        <p>
-                            MOVEZA will recommend
-                            suitable fashion items
-                            based on the current weather.
-                        </p>
+    <a href="#shop" class="text-link">
+        VIEW COLLECTION →
+    </a>
 
-
-                        <a href="#shop" class="text-link">
-                            VIEW COLLECTION →
-                        </a>
-
-                    </div>
+</div>
 
 
                 </div>
@@ -487,8 +496,7 @@
 
                     <!-- PRODUCT 1 -->
 
-                    <article class="product-card"
-                    data-category="shirt>
+                    <article class="product-card" data-category="shirt">
 
                         <div class="product-image">
 
